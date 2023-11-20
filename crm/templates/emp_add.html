@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <h1 class="text-center">ADD EMPLOYEES</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <div class="text-center">
+        <button type="submit">ADD</button>
+    </div>
+
+    </form>
+   </div>
+
+
+
+{%endblock%}

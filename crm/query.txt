@@ -1,0 +1,42 @@
+to generate query file =python manage.py makemigrations
+to execute file=python manage.py migrate
+class Employees(models.Model):
+    name=models.CharField(max_length=100)
+    department=models.CharField(max_length=100)
+    salary=models.PositiveBigIntegerField()
+    email=models.EmailField(unique=True)
+    age=models.PositiveIntegerField()
+    contact=models.CharField( max_length=20,null=True)
+
+orm query for new obj=Employees.objects.create(name="",..)
+orm query for fecting all record
+>qs=Employees.objects.all()
+orm query for fetching a specific Employe
+>qs=Employees.objects.get(id=6)
+orm query for filtering Employedetails
+>qs=Employees.objects.filter(department="qa")
+orm query for updating an obj
+salary greater than 50000
+>qs=Employees.objects.filter(salary__gte=50000)
+>qs=Employees.objects.filter(salary__lte=50000)
+
+
+
+get names of employess not=hr,orm queryfor excluing obj
+>qs=Employees.objects.exclude(department="hr")
+
+
+to update
+employess.objects.filter(id=2).update(contact="new contact",age="52")
+
+to sort by salary
+employess.objects.all().order_by("salary")
+to implement in decending order=employess.objects.all().order_by("-salary")
+
+django-m admin startproject project name
+python manage.py startapp appname
+
+
+
+
+
